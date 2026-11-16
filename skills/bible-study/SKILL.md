@@ -86,10 +86,11 @@ Done when each application traces back to something stated in step 3.
   header the tool prints, with the book name in the reader's language:
   `Romans 8:28 (BSB)`, `Romanos 8:28 (NVA)`.
 - Link each quoted reference to the reader, so the reader can open the full
-  chapter: `[Romans 8:28 (BSB)](https://midvash.com/bsb/romans/8/28)`. The tool
+  chapter: `[Romans 8:28 (BSB)](https://midvash.com/bsb/romans/8#v=28)`. The tool
   result's `reader_url` gives the link for the first reference of a call. For
   the others, or when the client shows only the Markdown, build it:
-  `https://midvash.com/{version}/{book}/{chapter}/{verse}`, where `{version}`
+  `https://midvash.com/{version}/{book}/{chapter}#v={verse}` (a range is
+  `#v={first}-{last}`), where `{version}`
   is the slug you requested and `{book}` is the English book name in lowercase
   with hyphens (`1-corinthians`, `song-of-solomon`, `psalms`). Commentary and
   study results carry their own link to the full article; use it when you

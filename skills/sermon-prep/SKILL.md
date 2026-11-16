@@ -32,7 +32,11 @@ open, in a single message:
 - **Language and version.** Write in the preacher's language and quote one
   translation in that language throughout. Use the connection's default version
   when it matches that language; otherwise call `list_versions` with `language`
-  and pick one. Pass the language as `language` to `get_commentary` and
+  and pick one. Match the room: listeners who know a traditional translation by
+  heart (Almeida, King James, Reina-Valera) hear the familiar wording best, so
+  prefer that tradition's free edition for them, and mention in the notes when
+  the chosen version reads differently from what they know (NVA writes the
+  divine name "Yahweh" where Almeida has "SENHOR"). Pass the language as `language` to `get_commentary` and
   `search_study`, and the version as `version` to `get_cross_references` and
   `get_passage`.
 
@@ -50,16 +54,18 @@ Done when text, occasion, length and version are fixed.
 2. Trace the text's **flow**: its movements, the connectors that turn the
    argument ("therefore", "but", "so that"), the words it repeats, the scene
    changes in a narrative. These movements become the points in step 4.
-3. Where one word carries the weight, `compare_passage` on that verse in 2-3
-   versions, and `get_strongs` when the original word changes the reading (the
+3. Where one word carries the weight, compare that verse in 2-3 versions
+   (`compare_passage`, or one fetch per version) and note what actually
+   differs. Add `get_strongs` when the original word changes the reading (the
    server has no verse-to-Strong's mapping, so say when the link is your
-   inference). Without these tools, skip this step.
+   inference); without it, leave the original language out.
 4. `get_cross_references` on the verses that carry each movement, and keep one
    reference per movement that genuinely explains it.
 
 Give the reading historic Christianity broadly holds. Where traditions read the
 passage differently, name the main readings in the preacher's notes and leave
-the choice to the preacher.
+the choice to the preacher. Without commentary, name only readings you are sure
+of, and say they come from general knowledge rather than a fetched source.
 
 Done when you can state in one sentence what the text said to its first
 listeners (the **exegetical idea**), and each part of that sentence points to a
@@ -73,7 +79,9 @@ spoken to these listeners, memorable enough to repeat. Pair it with a
 
 Show where the passage stands in the story that ends in Christ, along the line
 the text itself gives (promise, pattern, contrast, fulfilment); a forced
-connection weakens the sermon.
+connection weakens the sermon. Place it inside the point or the conclusion it
+grows out of, as a short paragraph with its own verse, and count its minutes in
+that block.
 
 Done when the big idea is one sentence the text supports and the purpose names
 a response.
@@ -111,8 +119,9 @@ Done when the minutes add up to the requested length.
 
 ## Deliverable
 
-A preaching outline: title, text, big idea, purpose, introduction, points,
-conclusion, minutes per block, and a short "notes for the preacher" block with
+A preaching outline: title, text, big idea, purpose, introduction, points (one
+of them, or the conclusion, carrying the line to Christ), conclusion, minutes
+per block, and a short "notes for the preacher" block with
 the context, the readings traditions differ on, and the commentary links when
 you used commentary. Keep
 it an outline the preacher makes their own; write a full manuscript only when
@@ -126,10 +135,11 @@ asked.
   the tool prints, with the book name in the preacher's language:
   `Luke 15:20 (BSB)`, `Lucas 15:20 (NVA)`.
 - Link each quoted reference to the reader:
-  `[Luke 15:20 (BSB)](https://midvash.com/bsb/luke/15/20)`. The tool result's
+  `[Luke 15:20 (BSB)](https://midvash.com/bsb/luke/15#v=20)`. The tool result's
   `reader_url` gives the link for the first reference of a call. For the
   others, or when the client shows only the Markdown, build it:
-  `https://midvash.com/{version}/{book}/{chapter}/{verse}`, where `{version}`
+  `https://midvash.com/{version}/{book}/{chapter}#v={verse}` (a range is
+  `#v={first}-{last}`), where `{version}`
   is the slug you requested and `{book}` is the English book name in lowercase
   with hyphens (`1-corinthians`, `song-of-solomon`, `psalms`). Commentary and
   study results carry their own link; use it in the preacher's notes.
