@@ -16,9 +16,11 @@ References in `refs` and `q` accept book names in the user's language.
 
 Things the API does differently from the MCP tools:
 
-- **Pass a version the catalog has.** A slug it does not know (`nvi`, `niv`,
-  `esv`) silently falls back to another version — check the `version` field in
-  the response and name that one. Common picks: `bsb` (en), `almeida-livre` or
+- **Pass a version the catalog has.** A version with all rights reserved
+  (`nvi`, `niv`, `esv`) is served by a free one in the same language, and the
+  response says so in `meta.versionNotice` (`requested`, `served`). When it is
+  there, name the served version and tell the reader their usual translation
+  was not available. Common picks: `bsb` (en), `almeida-livre` or
   `nva` (pt-br), `rvr1909` (es), `luth1912` (de), `lsg` (fr), `riveduta` (it),
   `cuvs` (zh), `synodal` (ru), `kor` (ko).
 - **Copyright** arrives in `meta.copyright` on single-passage requests.
