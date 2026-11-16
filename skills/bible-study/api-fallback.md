@@ -27,8 +27,9 @@ Things the API does differently from the MCP tools:
   carries `meta.versionNotice` (`requested`, `served`; its `message` is in
   English). Name the served version and tell the reader, in their language,
   that their usual translation was not available.
-- **Book names come back in English** (`bookName`, `reference`). Write them in
-  the reader's language yourself.
+- **Book names follow the version's language** (`bookName`, `reference`):
+  `nva` answers "Romanos 8:28". Add `&locale=en` (or another of the 9 site
+  languages) to get them in a different one.
 - **Verse boundaries.** Besides the joined `text`, each passage has a `verses`
   array, one string per verse starting at `verse`; quote from it when you need
   single verses.
