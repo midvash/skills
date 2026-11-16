@@ -7,11 +7,14 @@ in Claude Code, Claude.ai, Cursor, Codex and any agent that reads `SKILL.md`.
 npx skills add midvash/skills
 ```
 
+One skill only: `npx skills add midvash/skills --skill sermon-prep`.
+
 ## Skills
 
 | Skill | What it does |
 |---|---|
-| [`bible-study`](skills/bible-study/SKILL.md) | Guides a real Bible study (observation, interpretation, application) on a passage or a topic, as a personal study, a small-group lesson or a sermon outline. Every verse is fetched, never quoted from memory, and linked to the full chapter on midvash.com. |
+| [`bible-study`](skills/bible-study/SKILL.md) | Guides a real Bible study (observation, interpretation, application) on a passage or a topic, as a personal study or a small-group lesson. Every verse is fetched, never quoted from memory, and linked to the full chapter on midvash.com. |
+| [`sermon-prep`](skills/sermon-prep/SKILL.md) | Prepares a sermon from the text up: studies the passage, states its big idea, builds the points the text itself gives and times each block for the length you preach. Also plans a series through a book. |
 
 ## Where the text comes from
 

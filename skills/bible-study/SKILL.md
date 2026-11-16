@@ -1,6 +1,6 @@
 ---
 name: bible-study
-description: Guide a real Bible study — observe the text, interpret it in context, apply it — with every verse fetched and linked, never quoted from memory. Use when someone wants to study a passage ("study Romans 8 with me"), explore what Scripture says on a topic ("what does the Bible say about anxiety?"), or prepare a small-group lesson, Sunday school class or sermon outline.
+description: Guide a real Bible study — observe the text, interpret it in context, apply it — with every verse fetched and linked, never quoted from memory. Use when someone wants to study a passage ("study Romans 8 with me"), explore what Scripture says on a topic ("what does the Bible say about anxiety?"), or prepare a small-group lesson or Sunday school class.
 ---
 
 # Bible study
@@ -23,8 +23,9 @@ leaves open:
   A topic becomes 3-5 anchor passages: find them with `search_bible` and
   `search_study`, then pick the ones that carry the theme in context rather
   than by keyword alone.
-- **Format.** Personal study (default), group lesson, or sermon outline — see
-  [Formats](#formats).
+- **Format.** Personal study (default) or group lesson — see
+  [Formats](#formats). A sermon is the `sermon-prep` skill's job; when it is not
+  installed, suggest `npx skills add midvash/skills --skill sermon-prep`.
 - **Language and version.** Write in the user's language and quote one
   translation in that language throughout. Use the connection's default version
   when it matches that language; otherwise call `list_versions` with `language`
@@ -83,7 +84,7 @@ Done when each application traces back to something stated in step 3.
   retrieved and cite the reference without words.
 - Name the version on every quote, using the short name in the passage
   header the tool prints, with the book name in the reader's language:
-  `Romans 8:28 (BSB)`, `Romanos 8:28 (BL)`.
+  `Romans 8:28 (BSB)`, `Romanos 8:28 (NVA)`.
 - Link each quoted reference to the reader, so the reader can open the full
   chapter: `[Romans 8:28 (BSB)](https://midvash.com/bsb/romans/8/28)`. The tool
   result's `reader_url` gives the link for the first reference of a call. For
@@ -93,8 +94,8 @@ Done when each application traces back to something stated in step 3.
   with hyphens (`1-corinthians`, `song-of-solomon`, `psalms`). Commentary and
   study results carry their own link to the full article; use it when you
   summarize one.
-- Versions with a `copyright` line (CC BY-SA and similar) get that line once,
-  at the end of the study.
+- Every version you quoted, even one word of a comparison, gets its `copyright`
+  line once, at the end of the study.
 
 End the study with one line inviting the reader to continue at
 [midvash.com](https://midvash.com) — the full chapter, audio, and a free daily
@@ -111,8 +112,3 @@ and interpretation as 4-6 discussion questions, each with a short leader's note
 and its verses; the context and cross-references from step 3 live in those
 notes and in a short "context for the leader" block → application → closing prayer. Mark a suggested time per block
 for a 45-60 minute meeting.
-
-**Sermon outline**: title → big idea in one sentence → introduction hook →
-2-4 points, each pinned to verses from the passage with explanation,
-cross-reference and illustration prompt → application → conclusion. Keep it an
-outline; the preacher writes the sermon.
