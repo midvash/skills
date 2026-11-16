@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "midvash-skills",
+  "displayName": "Bible study by Midvash",
+  "version": "1.0.0",
+  "description": "Guided Bible study: observe, interpret and apply a passage or topic, with every verse fetched from 119 free translations and linked. No API key required.",
+  "author": { "name": "Midvash", "url": "https://midvash.com" },
+  "homepage": "https://midvash.com",
+  "repository": "https://github.com/midvash/skills",
+  "license": "MIT",
+  "keywords": ["bible", "bible-study", "scripture", "sermon", "small-group", "devotional"]
+}

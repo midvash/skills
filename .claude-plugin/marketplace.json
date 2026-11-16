@@ -1,0 +1,11 @@
+{
+  "name": "midvash",
+  "owner": { "name": "Midvash", "url": "https://midvash.com" },
+  "plugins": [
+    {
+      "name": "midvash-skills",
+      "source": "./",
+      "description": "Guided Bible study with every verse fetched and linked, plus the free Midvash Bible MCP server."
+    }
+  ]
+}
