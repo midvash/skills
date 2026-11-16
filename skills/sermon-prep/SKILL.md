@@ -139,7 +139,7 @@ asked.
   link the tool gives: the heading of each passage in the tool result already
   links to it, and `reader_url` repeats the first one. These links open the
   site in the version's language; a link you build by hand may not. To link one
-  verse of a passage you fetched, keep its link and change the number after `#v=`.
+  verse of a passage you fetched, keep its link and set `#v=` to that verse (add it when a chapter link has none).
   Commentary and study results carry their own link; use it in the preacher's
   notes.
 - Every version you quoted, even one word of a comparison, gets its `copyright`

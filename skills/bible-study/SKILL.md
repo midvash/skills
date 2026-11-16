@@ -96,7 +96,7 @@ Done when each application traces back to something stated in step 3.
   Use the link the tool gives: the heading of each passage in the tool result
   already links to it, and `reader_url` repeats the first one. These links open
   the site in the version's language; a link you build by hand may not. To link one
-  verse of a passage you fetched, keep its link and change the number after `#v=`. Commentary and
+  verse of a passage you fetched, keep its link and set `#v=` to that verse (add it when a chapter link has none). Commentary and
   study results carry their own link to the full article; use it when you
   summarize one.
 - Every version you quoted, even one word of a comparison, gets its `copyright`
