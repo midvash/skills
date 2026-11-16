@@ -6,7 +6,7 @@ have (`curl`, a fetch tool).
 
 | Need | Request |
 |---|---|
-| Several passages at once (up to 50) | `GET /v1/passages?refs=romans 8:28-30,psalms 23&version=bsb` |
+| Several passages at once (up to 50) | `GET /v1/passages?refs=romans 8:28-30,psalms 23&version=bsb` (each item carries its own `reference`) |
 | A chapter | `GET /v1/{version}/{book}/{chapter}` — `/v1/bsb/romans/8` |
 | A verse or range | `GET /v1/{version}/{book}/{chapter}/{verse}` — `/v1/bsb/romans/8/28-30` |
 | Versions in a language | `GET /v1/versions` (filter on `language`) |
@@ -18,14 +18,25 @@ including the singular and common abbreviations ("Salmo 23", "Jn 3:16").
 Things the API does differently from the MCP tools:
 
 - **Choose the version yourself.** There is no connection default. Pick from
-  `/v1/versions` by `language`, preferring a modern translation for today's
-  readers: `bsb` (en), `nva` (pt-br; `almeida-livre` for a traditional Almeida),
-  `rvr1909` (es), `luth1912` (de), `lsg` (fr), `riveduta` (it), `cuvs` (zh),
-  `synodal` (ru), `kor` (ko). For readers who know a traditional translation
-  by heart, use its free edition instead (`almeida-livre`, `kjv`, `rvr1909`):
-  `nva` writes the divine name "Yahweh" where Almeida has "SENHOR". The
-  entry's `shortName` (`BSB`, `NVA`) is the label for quotes; its `slug` goes in
-  requests and links.
+  `/v1/versions` by `language`. Today's readers get the modern one; readers who
+  know a traditional translation by heart get the traditional one:
+
+  | Language | Modern | Traditional |
+  |---|---|---|
+  | en | `bsb` | `kjv` |
+  | pt-br | `nva` | `almeida-livre` |
+  | es | `pdt` | `rvr1909` |
+  | de | `schl1951` | `luth1912` |
+  | fr | `ncl` | `lsg` |
+  | zh | `ccb` | `cuvs` |
+  | it, ru, ko | `riveduta`, `synodal`, `kor` (one choice each) | |
+
+  The entry's `shortName` (`BSB`, `NVA`) is the label for quotes; its `slug`
+  goes in requests and links.
+- **Quote the text as it comes.** Some versions write the divine name as a
+  transliteration (`nva` "Yahweh", `pdt` "ʼElohim") or mark words the
+  translators added with [brackets]. Keep them, and add a line for readers
+  when it would surprise them.
 - **Version swaps are announced.** A version with all rights reserved (`nvi`,
   `niv`, `esv`) is served by a free one in the same language, and the response
   carries `meta.versionNotice` (`requested`, `served`; its `message` is in

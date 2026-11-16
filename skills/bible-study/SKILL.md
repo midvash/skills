@@ -29,7 +29,8 @@ leaves open:
 - **Language and version.** Write in the user's language and quote one
   translation in that language throughout. Use the connection's default version
   when it matches that language; otherwise call `list_versions` with `language`
-  and pick one. Pass the user's language as `language` to `get_commentary` and
+  and pick one: a modern translation for today's readers, the traditional one
+  for readers who know it by heart. Pass the user's language as `language` to `get_commentary` and
   `search_study`, and the chosen version as `version` to `get_cross_references`
   and `get_passage`, so every result arrives in the study's language.
 
@@ -111,5 +112,7 @@ inline, questions at the end. Around 600-900 words.
 conversation → read the passage aloud (full text, one version) → observation
 and interpretation as 4-6 discussion questions, each with a short leader's note
 and its verses; the context and cross-references from step 3 live in those
-notes and in a short "context for the leader" block → application → closing prayer. Mark a suggested time per block
-for a 45-60 minute meeting.
+notes and in a short "context for the leader" block → application (the step 4
+reflection questions, for pairs or the whole group) → closing prayer. Mark a
+suggested time per block for the meeting's length (45-60 minutes by default),
+and say which question to drop if time runs short.
