@@ -31,8 +31,8 @@ Things the API does differently from the MCP tools:
   | zh | `ccb` | `cuvs` |
   | it, ru, ko | `riveduta`, `synodal`, `kor` (one choice each) | |
 
-  The entry's `shortName` (`BSB`, `NVA`) is the label for quotes; its `slug`
-  goes in requests and links.
+  The `shortName` (`BSB`, `NVA`), in each passage's `meta` and in the
+  `/v1/versions` entry, is the label for quotes; the `slug` goes in requests.
 - **Quote the text as it comes.** Some versions write the divine name as a
   transliteration (`nva` "Yahweh", `pdt` "ʼElohim") or mark words the
   translators added with [brackets]. Keep them, and add a line for readers
