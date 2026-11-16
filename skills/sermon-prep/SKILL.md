@@ -135,14 +135,12 @@ asked.
   the tool prints, with the book name in the preacher's language:
   `Luke 15:20 (BSB)`, `Lucas 15:20 (NVA)`.
 - Link each quoted reference to the reader:
-  `[Luke 15:20 (BSB)](https://midvash.com/bsb/luke/15#v=20)`. The tool result's
-  `reader_url` gives the link for the first reference of a call. For the
-  others, or when the client shows only the Markdown, build it:
-  `https://midvash.com/{version}/{book}/{chapter}#v={verse}` (a range is
-  `#v={first}-{last}`), where `{version}`
-  is the slug you requested and `{book}` is the English book name in lowercase
-  with hyphens (`1-corinthians`, `song-of-solomon`, `psalms`). Commentary and
-  study results carry their own link; use it in the preacher's notes.
+  `[Lucas 15:20 (NVA)](https://midvash.com/pt-br/nva/lucas/15#v=20)`. Use the
+  link the tool gives: the heading of each passage in the tool result already
+  links to it, and `reader_url` repeats the first one. These links open the
+  site in the version's language; a link you build by hand may not.
+  Commentary and study results carry their own link; use it in the preacher's
+  notes.
 - Every version you quoted, even one word of a comparison, gets its `copyright`
   line once, at the end.
 

@@ -24,7 +24,7 @@ Things the API does differently from the MCP tools:
   | Language | Modern | Traditional |
   |---|---|---|
   | en | `bsb` | `kjv` |
-  | pt-br | `nva` | `almeida-livre` |
+  | pt-br | `nva` | `almeida-livre` (or `alm1911`, the 1911 Almeida many know by heart, in 1911 spelling) |
   | es | `pdt` | `rvr1909` |
   | de | `schl1951` | `luth1912` |
   | fr | `ncl` | `lsg` |
@@ -54,10 +54,9 @@ Things the API does differently from the MCP tools:
   no verse numbers). A verse can end mid-sentence: quote on to the end of the
   sentence.
 - **Copyright** arrives in `meta.copyright`, and in each `/v1/versions` entry.
-- **No `reader_url`.** Build the link from the version slug, the English book
-  slug (`book` in the response) and the chapter:
-  `https://midvash.com/{version}/{book}/{chapter}`, plus `#v={verse}` or
-  `#v={first}-{last}` for verses.
+- **Links:** each passage (and each item of `/v1/passages`) carries `readerUrl`,
+  the reader's address in the version's language
+  (`https://midvash.com/pt-br/nva/salmos/23#v=1-2`). Link quotes with it.
 - **Comparing versions** works: fetch the same verse once per version.
 - **No commentary, cross-references, Strong's or study library.** Interpret
   from the passage and its chapter, and fetch the cross-references you can name.

@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "midvash-skills",
   "displayName": "Bible study and sermon prep by Midvash",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Guided Bible study and sermon preparation on a passage or topic, with every verse fetched from 119 free translations and linked. No API key required.",
   "author": {
     "name": "Midvash",
