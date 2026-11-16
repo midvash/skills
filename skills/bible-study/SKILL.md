@@ -75,7 +75,12 @@ context, cross-references and, where used, the study library.
 Move from the first readers to this reader: one or two truths the passage
 teaches about God, and what follows for life today. Then 3 reflection questions
 that send the reader back to the text, not to opinions, and a short prayer drawn
-from the passage's own words.
+from the passage's own words. In a group lesson the truths open the application
+block and the questions follow them.
+
+When the reader or the group is going through something heavy (grief, anxiety,
+abuse), add a short note of care: the passage comforts, and it does not replace
+pastoral or professional help; say where to look for it.
 
 Done when each application traces back to something stated in step 3.
 

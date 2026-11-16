@@ -38,16 +38,21 @@ Things the API does differently from the MCP tools:
   translators added with [brackets]. Keep them, and add a line for readers
   when it would surprise them.
 - **Version swaps are announced.** A version with all rights reserved (`nvi`,
-  `niv`, `esv`) is served by a free one in the same language, and the response
-  carries `meta.versionNotice` (`requested`, `served`; its `message` is in
-  English). Name the served version and tell the reader, in their language,
-  that their usual translation was not available.
+  `niv`, `esv`) is served by a free one in the language that slug belongs to, and
+  the response carries `meta.versionNotice` (`requested`, `served`; its
+  `message` is in English). A slug can belong to another language than the
+  reader's: `nvi` is the Portuguese NVI and answers in Portuguese, so for a
+  Spanish reader asking for "NVI" use `pdt` or `onbv-es`. Always check that the
+  served version is in the reader's language, name it, and tell the reader, in
+  their language, that their usual translation was not available.
 - **Book names follow the version's language** (`bookName`, `reference`):
   `nva` answers "Romanos 8:28". Add `&locale=en` (or another of the 9 site
   languages) to get them in a different one.
 - **Verse boundaries.** Besides the joined `text`, each passage has a `verses`
   array, one string per verse starting at `verse`; quote from it when you need
-  single verses.
+  single verses, and number from it when the passage is read aloud (`text` has
+  no verse numbers). A verse can end mid-sentence: quote on to the end of the
+  sentence.
 - **Copyright** arrives in `meta.copyright`, and in each `/v1/versions` entry.
 - **No `reader_url`.** Build the link from the version slug, the English book
   slug (`book` in the response) and the chapter:
